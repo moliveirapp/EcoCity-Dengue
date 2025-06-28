@@ -1,0 +1,93 @@
+:root {
+    --azul-primario: #1a73e8;
+    --azul-secundario: #4285f4;
+    --azul-claro: #e8f0fe;
+    --verde-success: #29b7ca;
+    --vermelho-danger: #355fea;
+    --amarelo-warning: #05a1fb;
+    --cinza-texto: #5f6368;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cinza-texto);
+}
+
+.hero-banner {
+    background-color: var(--azul-claro);
+    padding: 5rem 0;
+}
+
+.hero-banner h1 {
+    font-weight: 700;
+    color: var(--azul-primario);
+    margin-bottom: 1.5rem;
+}
+
+.hero-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    color: var(--azul-primario);
+}
+
+.btn-primary {
+    background-color: var(--azul-primario);
+    border-color: var(--azul-primario);
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-secundario);
+    border-color: var(--azul-secundario);
+}
+
+.bg-primary {
+    background-color: var(--azul-primario) !important;
+}
+
+.text-primary {
+    color: var(--azul-primario) !important;
+}
+
+.estatisticas h3 {
+    font-weight: 700;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-banner {
+        text-align: center;
+        padding: 3rem 0;
+    }
+    
+    .hero-banner img {
+        margin-top: 2rem;
+    }
+}

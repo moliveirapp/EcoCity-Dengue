@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa - Dengue Zero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #mapa-dengue {
+            height: 600px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .legenda {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+            line-height: 1.5;
+        }
+        .legenda i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+        /* Estilos para as cores das legendas de risco (opcional, se quiser ícones coloridos) */
+        .legenda .risco-alto { background-color: rgba(255, 0, 0, 0.7); } /* Vermelho escuro */
+        .legenda .risco-medio { background-color: rgba(255, 102, 0, 0.7); } /* Laranja */
+        .legenda .risco-baixo { background-color: rgba(255, 204, 0, 0.7); } /* Amarelo */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/LOGO-SITE.png" alt="Ecocity Logo" height="55"> <span class="brand-text">Ecocity <span class="brand-text-sm">Dengue Zero</span></span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/mapa.html">Mapa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="../pages/cadastro.html">Cadastre-se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <h1 class="mb-4">Mapa de Focos e Zonas de Risco de Dengue</h1>
+            
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="mapa-dengue"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Filtros</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Bairro</label>
+                                <select class="form-select">
+                                    <option selected>Todos os bairros</option>
+                                    <option>Centro</option>
+                                    <option>Vila Marcondes</option>
+                                    <option>Jardim Paulista</option>
+                                    <option>Residencial Parque do Lago</option>
+                                    </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option selected>Todos os status</option>
+                                    <option>Reportado</option>
+                                    <option>Em verificação</option>
+                                    <option>Tratado</option>
+                                    <option>Eliminado</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Data</label>
+                                <select class="form-select">
+                                    <option selected>Últimos 7 dias</option>
+                                    <option>Últimos 30 dias</option>
+                                    <option>Últimos 90 dias</option>
+                                    <option>Todos</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary w-100">Aplicar Filtros</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Legenda</h5>
+                        </div>
+                        <div class="card-body legenda">
+                            <h6>Focos Reportados:</h6>
+                            <div><i class="fas fa-circle text-danger"></i> Foco Ativo (Crítico)</div>
+                            <div><i class="fas fa-circle text-warning"></i> Em Verificação (Atenção)</div>
+                            <div><i class="fas fa-circle text-success"></i> Tratado (Controlado)</div>
+                            <div><i class="fas fa-circle text-secondary"></i> Eliminado (Resolvido)</div>
+                            <hr>
+                            <h6>Zonas de Risco:</h6>
+                            <div><i class="legenda-cor risco-alto"></i> Risco Alto</div>
+                            <div><i class="legenda-cor risco-medio"></i> Risco Médio</div>
+                            <div><i class="legenda-cor risco-baixo"></i> Risco Baixo</div>
+                            <hr>
+                            <div><i class="fas fa-home text-info"></i> Seu endereço</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Reportar Novo Foco de Dengue</h5>
+                </div>
+                <div class="card-body">
+                    <form id="form-reportar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="endereco" class="form-label">Endereço aproximado <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="endereco" placeholder="Rua, número, bairro" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipo-foco" class="form-label">Tipo de foco <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="tipo-foco" required>
+                                        <option value="">Selecione...</option>
+                                        <option>Água parada em recipiente</option>
+                                        <option>Pneus abandonados</option>
+                                        <option>Lixo acumulado</option>
+                                        <option>Vaso de planta</option>
+                                        <option>Cisterna/Caixa d'água destampada</option>
+                                        <option>Bueiro/Boca de lobo</option>
+                                        <option>Calha entupida</option>
+                                        <option>Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">Descrição (detalhes sobre o foco)</label>
+                                    <textarea class="form-control" id="descricao" rows="3" placeholder="Ex: Há água parada em um bueiro com larvas visíveis." maxlength="250"></textarea>
+                                    <small class="form-text text-muted">Máx. 250 caracteres.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="foto" class="form-label">Anexar Foto (opcional)</label>
+                                    <input type="file" class="form-control" id="foto" accept="image/*">
+                                    <small class="form-text text-muted">Ajuda a equipe a identificar o local. Formatos: JPG, PNG.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg mt-3">Enviar Denúncia</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../img/logo.png" alt="Dengue Zero" height="40">
+                    <p class="mt-3">Combate à dengue em Presidente Prudente.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Início</a></li>
+                        <li><a href="mapa.html" class="text-white">Mapa</a></li>
+                        <li><a href="sobre.html" class="text-white">Sobre</a></li>
+                        <li><a href="login.html" class="text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-envelope me-2"></i> contato@denguezeropp.com.br</p>
+                    <p><i class="fas fa-phone me-2"></i> (18) 3902-1234</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2023 Dengue Zero - Presidente Prudente. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script src="../js/vlibras.js"></script>
+    <script src="../js/mapa.js"></script> </body>
+</html>

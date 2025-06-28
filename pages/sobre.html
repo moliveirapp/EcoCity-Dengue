@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Ecocity: Dengue Zero</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sobre-hero {
+            background-color: var(--azul-claro);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--azul-primario);
+            margin-bottom: 1rem;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--azul-claro);
+        }
+
+        .ods-section {
+            background-color: #e9f5ff; /* Um azul bem claro */
+            border-left: 5px solid #007bff; /* Linha azul primária */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .ods-icon {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .info-card {
+            border-left: 4px solid var(--bs-primary);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/LOGO-SITE.png" alt="Ecocity Logo" height="55"> <span class="brand-text">Ecocity <span class="brand-text-sm">Dengue Zero</span></span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/mapa.html">Mapa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="../pages/cadastro.html">Cadastre-se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="sobre-hero">
+        <div class="container text-center">
+            <h1 class="display-4">Sobre a Ecocity: Dengue Zero</h1>
+            <p class="lead">Nossa plataforma, sua ferramenta no combate à dengue em Presidente Prudente.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Nossa Missão: Proteger Presidente Prudente</h2>
+                    <p>A **Ecocity: Dengue Zero** é uma plataforma colaborativa desenvolvida com um propósito claro: **mobilizar a população de Presidente Prudente** no combate ao *Aedes aegypti*, o mosquito vetor da dengue, zika e chikungunya.</p>
+                    <p>Nossa missão é simples: **capacitar cada cidadão** a ser um agente ativo na identificação e denúncia de focos, transformando a vigilância individual em uma poderosa rede de combate à doença. Ao facilitar a comunicação direta com as autoridades de saúde, agilizamos as ações de controle e prevenção, protegendo a saúde de todos.</p>
+                    <p>Acreditamos que, com a tecnologia e a colaboração de todos, podemos construir uma Presidente Prudente mais segura, saudável e livre da dengue. Junte-se a nós!</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://jornal.usp.br/wp-content/uploads/2023/05/20230522_Aedes_aegypti.jpg" alt="Mosquito Aedes Aegypti" class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary">O Cenário Desafiador da Dengue em Presidente Prudente (2025)</h2>
+            <p class="text-center lead mb-5">Presidente Prudente tem enfrentado surtos alarmantes de dengue, com impactos significativos na saúde pública. Veja alguns dados que ressaltam a urgência da nossa atuação:</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">1. Casos Confirmados (Abril/2025):</h5>
+                            <p class="card-text">Até **18 de abril de 2025**, Presidente Prudente registrou **13.657 casos confirmados** de dengue.</p>
+                            <small class="text-muted">Fonte: Portal Prudentino</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">2. Óbitos por Dengue (Abril/2025):</h5>
+                            <p class="card-text">O número de óbitos confirmados pela doença chegou a **19 mortes** até meados de abril de 2025.</p>
+                            <small class="text-muted">Fonte: Portal Prudentino</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">3. Situação de Emergência:</h5>
+                            <p class="card-text">Em **07 de fevereiro de 2025**, a Prefeitura decretou **situação de emergência** devido ao perigo de epidemia.</p>
+                            <small class="text-muted">Fonte: Band, Portal Prudentino</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">4. Casos Iniciais de 2025 (Jan):</h5>
+                            <p class="card-text">No início de **janeiro de 2025**, a cidade já somava **446 casos confirmados** e 2.658 notificações.</p>
+                            <small class="text-muted">Fonte: Jornal O Imparcial</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">5. Aumento Exponencial:</h5>
+                            <p class="card-text">Houve um aumento de **4360%** nos casos confirmados de dengue no início de 2025 comparado a janeiro de 2024.</p>
+                            <small class="text-muted">Fonte: Jornal O Imparcial</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">6. Índice de Infestação Predial (IIP):</h5>
+                            <p class="card-text">O primeiro levantamento de 2024 (divulgado em jan/2025) indicou um **IIP de 3,4**, colocando a cidade em **alerta** (risco de surto acima de 3,9).</p>
+                            <small class="text-muted">Fonte: Prefeitura de Presidente Prudente</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">7. Índice Breteau (IB):</h5>
+                            <p class="card-text">O IB de 2024 (jan/2025) foi de **4,4**, indicando a presença de larvas do mosquito.</p>
+                            <small class="text-muted">Fonte: Prefeitura de Presidente Prudente</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">8. Áreas Críticas de Infestação:</h5>
+                            <p class="card-text">Regiões como a **Área 2** (Parque Cedral, Jequitibás II, Monte Alto) concentraram altos índices de infestação.</p>
+                            <small class="text-muted">Fonte: Jornal O Imparcial</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">9. Arrastões e Mutirões:</h5>
+                            <p class="card-text">Em arrastões, a Prefeitura retirou dezenas de caminhões de lixo (ex: **20 e 30 caminhões**) de quintais para eliminar criadouros.</p>
+                            <small class="text-muted">Fonte: Jornal O Imparcial</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">10. Nebulização Ambiental:</h5>
+                            <p class="card-text">Bairros como Cecap, Santa Paula e São Gabriel receberam nebulização para eliminar mosquitos adultos.</p>
+                            <small class="text-muted">Fonte: Jornal O Imparcial</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">11. Força-Tarefa em Reciclagem:</h5>
+                            <p class="card-text">Prefeitura iniciou força-tarefa em depósitos irregulares de reciclagem, focos comuns de criadouros.</p>
+                            <small class="text-muted">Fonte: Sassom - Presidente Prudente SP</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">12. Testes Rápidos e Vacinas:</h5>
+                            <p class="card-text">A cidade recebeu **24 mil testes rápidos** e **20 mil doses da vacina Qdenga** (para faixa etária de 10 a 14 anos) do Estado.</p>
+                            <small class="text-muted">Fonte: Portal Prudentino</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">13. Centro de Apoio à Dengue:</h5>
+                            <p class="card-text">Um Centro de Apoio à Dengue foi estabelecido (e posteriormente encerrado em Jun/2025 devido à queda de atendimentos), demonstrando a resposta municipal à crise.</p>
+                            <small class="text-muted">Fonte: Prudentenews</small>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">14. Casos de Chikungunya:</h5>
+                            <p class="card-text">Foram confirmados **4 casos de febre chikungunya** em Presidente Prudente em 2025, transmitida pelo mesmo mosquito.</p>
+                            <small class="text-muted">Fonte: Prefeitura de Presidente Prudente</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm info-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">15. Alerta Contínuo:</h5>
+                            <p class="card-text">Apesar da melhora no cenário com a chegada do outono, a VEM alerta para o risco de novos focos devido às chuvas e a importância da limpeza.</p>
+                            <small class="text-muted">Fonte: Prudentenews</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-5 text-muted fst-italic">Dados compilados de notícias da G1, Portal Prudentino, Jornal O Imparcial e site oficial da Prefeitura de Presidente Prudente referentes ao ano de 2025.</p>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary">Como a Ecocity: Dengue Zero Ajuda a Transformar Presidente Prudente</h2>
+            <p class="text-center lead mb-5">Diante do cenário apresentado, nossa plataforma surge como um pilar fundamental para apoiar os esforços já existentes e trazer uma nova dimensão ao combate à dengue:</p>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-bullhorn feature-icon text-primary mb-3"></i>
+                            <h4>Engajamento Comunitário Ampliado</h4>
+                            <p>Transformamos cada cidadão em um **fiscal ativo**. Com a ferramenta de denúncia fácil de usar, **multiplicamos os "olhos"** na cidade, identificando focos que poderiam passar despercebidos pelos agentes de saúde. Isso é vital, especialmente porque **90% dos focos estão dentro das residências**, e nossa plataforma incentiva essa vigilância interna.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-map-marked-alt feature-icon text-primary mb-3"></i>
+                            <h4>Mapeamento Inteligente e Preciso</h4>
+                            <p>A funcionalidade de mapeamento no **Ecocity: Dengue Zero** permite que as autoridades visualizem **zonas de risco em tempo real**. Com denúncias geolocalizadas, a Prefeitura pode direcionar suas equipes de forma mais eficiente, focando em áreas de alta incidência e otimizando o uso de recursos como arrastões e nebulização, que são cruciais como mostram os dados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line feature-icon text-primary mb-3"></i>
+                            <h4>Dados para Decisão e Prevenção</h4>
+                            <p>Cada denúncia e foco mapeado gera dados valiosos. Essas informações podem ajudar a Vigilância Epidemiológica Municipal a identificar padrões, prever surtos e refinar estratégias de prevenção. Ao analisar os tipos de focos mais comuns (como bueiros ou lixo acumulado, conforme os dados do IIP e IB), podemos criar campanhas de conscientização mais assertivas, educando a população sobre os riscos específicos de cada bairro e tipo de criadouro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                 <div class="col-md-4 offset-md-2 mb-4">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-handshake feature-icon text-primary mb-3"></i>
+                            <h4>Sinergia com Ações Existentes</h4>
+                            <p>A **Ecocity: Dengue Zero** não substitui, mas complementa as valiosas ações já realizadas pela Prefeitura, como arrastões, nebulização e distribuição de testes e vacinas. Somos um elo de conexão entre a comunidade e o poder público, fortalecendo a rede de combate à dengue e tornando a resposta da cidade mais ágil e eficaz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-hands-helping feature-icon text-primary mb-3"></i>
+                            <h4>Cultura de Responsabilidade Coletiva</h4>
+                            <p>Ao dar ao cidadão uma ferramenta prática para agir, fomentamos uma cultura de responsabilidade compartilhada. A luta contra a dengue não é só da prefeitura, é de todos. Ao engajar ativamente os prudentinos, o **Ecocity: Dengue Zero** ajuda a transformar a indiferença em ação, criando uma comunidade mais consciente e resiliente frente à doença.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 text-primary">Ecocity e a ODS 14: Vida na Água – Um Impacto Além do Óbvio</h2>
+            <div class="ods-section">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/E_SDG_goals_icons-individual-rgb-14.png/800px-E_SDG_goals_icons-individual-rgb-14.png" alt="ODS 14 - Vida na Água" class="img-fluid ods-icon">
+                    </div>
+                    <div class="col-md-10">
+                        <p class="lead">À primeira vista, o combate a um mosquito terrestre como o *Aedes aegypti* pode parecer distante da **ODS 14: Vida na Água**. No entanto, a missão da **Ecocity: Dengue Zero** tem um **impacto indireto e crucial** na saúde dos ecossistemas aquáticos de Presidente Prudente e, consequentemente, na qualidade de vida da população.</p>
+                        <p>O *Aedes aegypti* depende de **água parada** para se reproduzir. Muitos dos locais onde encontramos esses focos – como bueiros entupidos, lixo acumulado, pneus abandonados, e recipientes descartados de forma inadequada – são também fontes de **poluição para nossos rios e córregos**. Quando a chuva vem, esses detritos e a água contaminada são arrastados para as galerias pluviais e, daí, para os corpos d'água naturais da cidade.</p>
+                        <p>Ao incentivar a denúncia e a eliminação desses focos, nossa plataforma contribui diretamente para:</p>
+                        <ul>
+                            <li>**Redução da Poluição:** Menos lixo acumulado significa menos detritos chegando aos rios e córregos, melhorando a qualidade da água e protegendo a vida aquática.</li>
+                            <li>**Melhor Saneamento Básico:** A conscientização sobre a limpeza de quintais, bueiros e calhas ajuda a manter a infraestrutura de drenagem da cidade funcionando, prevenindo enchentes e o acúmulo de esgoto que também afeta a água.</li>
+                            <li>**Promoção de Ambientes Urbanos Saudáveis:** Uma cidade livre da dengue é uma cidade onde a população pode desfrutar de seus espaços públicos, incluindo áreas próximas a corpos d'água, de forma mais segura e saudável.</li>
+                            <li>**Cultura de Cuidado Ambiental:** O engajamento no combate à dengue instiga uma maior responsabilidade ambiental geral, que naturalmente se estende à preservação dos recursos hídricos.</li>
+                        </ul>
+                        <p>Assim, a **Ecocity: Dengue Zero** não só protege a saúde da população contra uma doença devastadora, mas também atua como um catalisador para um ambiente urbano mais limpo e sustentável, convergindo com os objetivos da ODS 14 de **conservar e utilizar de forma sustentável os oceanos, mares e os recursos marinhos para o desenvolvimento sustentável**.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../img/logo.png" alt="Ecocity" height="40">
+                    <p class="mt-3">Combate à dengue em Presidente Prudente.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Início</a></li>
+                        <li><a href="mapa.html" class="text-white">Mapa</a></li>
+                        <li><a href="sobre.html" class="text-white">Sobre</a></li>
+                        <li><a href="login.html" class="text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-envelope me-2"></i> contato@ecocitypp.com.br</p>
+                    <p><i class="fas fa-phone me-2"></i> (18) 3902-1234</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2025 Ecocity - Dengue Zero. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script src="../js/vlibras.js"></script>
+</body>
+</html>

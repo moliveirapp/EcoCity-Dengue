@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Dengue Zero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .cadastro-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        .cadastro-hero {
+            background-color: var(--azul-claro);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img\LOGO-SITE.png" alt="Ecocity Logo" height="55"> <span class="brand-text">Ecocity <span class="brand-text-sm">Dengue Zero</span></span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/mapa.html">Mapa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="../pages/cadastro.html">Cadastre-se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="cadastro-hero">
+        <div class="container text-center">
+            <h1 class="display-5">Junte-se à nossa comunidade</h1>
+            <p class="lead">Ajude a combater a dengue em Presidente Prudente</p>
+        </div>
+    </section>
+
+    <!-- Formulário de Cadastro -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cadastro-container">
+                <h2 class="text-center mb-4">Crie sua conta</h2>
+                
+                <div class="progress bg-light">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 33%" id="progress-bar"></div>
+                </div>
+                
+                <form id="form-cadastro">
+                    <!-- Passo 1 - Dados Pessoais -->
+                    <div class="cadastro-passo" id="passo1">
+                        <h5 class="mb-3"><i class="fas fa-user me-2"></i> Dados Pessoais</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nome" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cpf" class="form-label">CPF</label>
+                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="data-nascimento" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="(18) 99999-9999" required>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-primary" onclick="avancarParaPasso(2)">Próximo <i class="fas fa-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Passo 2 - Endereço -->
+                    <div class="cadastro-passo" id="passo2" style="display: none;">
+                        <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> Endereço</h5>
+                        
+                        <div class="mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="cep" placeholder="00000-000" required>
+                                <button class="btn btn-outline-secondary" type="button" id="buscar-cep">
+                                    <i class="fas fa-search"></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-8 mb-3">
+                                <label for="rua" class="form-label">Rua</label>
+                                <input type="text" class="form-control" id="rua" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="numero" class="form-label">Número</label>
+                                <input type="text" class="form-control" id="numero" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complemento">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="bairro" class="form-label">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" value="Presidente Prudente" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                            <button type="button" class="btn btn-outline-primary" onclick="voltarParaPasso(1)">
+                                <i class="fas fa-arrow-left me-1"></i> Voltar
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="avancarParaPasso(3)">
+                                Próximo <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Passo 3 - Dados de Acesso -->
+                    <div class="cadastro-passo" id="passo3" style="display: none;">
+                        <h5 class="mb-3"><i class="fas fa-lock me-2"></i> Dados de Acesso</h5>
+                        
+                        <div class="mb-3">
+                            <label for="email-cadastro" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email-cadastro" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="senha-cadastro" class="form-label">Senha</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="senha-cadastro" required>
+                                <button class="btn btn-outline-secondary" type="button" id="toggleSenhaCadastro">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="form-text">Mínimo de 8 caracteres</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="confirmar-senha" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="confirmar-senha" required>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termos" required>
+                            <label class="form-check-label" for="termos">Li e aceito os <a href="#" data-bs-toggle="modal" data-bs-target="#termosModal">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                            <button type="button" class="btn btn-outline-primary" onclick="voltarParaPasso(2)">
+                                <i class="fas fa-arrow-left me-1"></i> Voltar
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check me-1"></i> Finalizar Cadastro
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Termos de Uso -->
+    <div class="modal fade" id="termosModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Termos de Uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Aceitação dos Termos</h6>
+                    <p>Ao utilizar a plataforma Dengue Zero, você concorda com estes Termos de Uso e com nossa Política de Privacidade.</p>
+                    
+                    <h6>2. Uso da Plataforma</h6>
+                    <p>Você concorda em usar a plataforma apenas para fins legítimos de mapeamento e combate à dengue em Presidente Prudente.</p>
+                    
+                    <h6>3. Responsabilidades</h6>
+                    <p>Você é responsável por todas as informações que enviar através da plataforma e por manter sua senha em segurança.</p>
+                    
+                    <h6>4. Privacidade</h6>
+                    <p>Respeitamos sua privacidade e protegemos seus dados pessoais de acordo com a legislação vigente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../img/logo.png" alt="Dengue Zero" height="40">
+                    <p class="mt-3">Combate à dengue em Presidente Prudente.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Início</a></li>
+                        <li><a href="mapa.html" class="text-white">Mapa</a></li>
+                        <li><a href="sobre.html" class="text-white">Sobre</a></li>
+                        <li><a href="login.html" class="text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-envelope me-2"></i> contato@denguezeropp.com.br</p>
+                    <p><i class="fas fa-phone me-2"></i> (18) 3902-1234</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2023 Dengue Zero - Presidente Prudente. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script src="../js/vlibras.js"></script>
+    <script>
+        // Funções para navegar entre os passos do cadastro
+        function avancarParaPasso(passo) {
+            document.querySelectorAll('.cadastro-passo').forEach(el => el.style.display = 'none');
+            document.getElementById(`passo${passo}`).style.display = 'block';
+            
+            // Atualizar barra de progresso
+            const progresso = (passo / 3) * 100;
+            document.getElementById('progress-bar').style.width = `${progresso}%`;
+        }
+        
+        function voltarParaPasso(passo) {
+            document.querySelectorAll('.cadastro-passo').forEach(el => el.style.display = 'none');
+            document.getElementById(`passo${passo}`).style.display = 'block';
+            
+            // Atualizar barra de progresso
+            const progresso = (passo / 3) * 100;
+            document.getElementById('progress-bar').style.width = `${progresso}%`;
+        }
+        
+        // Mostrar/ocultar senha
+        document.getElementById('toggleSenhaCadastro').addEventListener('click', function() {
+            const senhaInput = document.getElementById('senha-cadastro');
+            const icon = this.querySelector('i');
+            
+            if (senhaInput.type === 'password') {
+                senhaInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                senhaInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+        
+        // Buscar CEP (simulação)
+        document.getElementById('buscar-cep').addEventListener('click', function() {
+            // Em produção, seria uma chamada à API dos Correios
+            alert('CEP buscado com sucesso! Preenchendo endereço...');
+            document.getElementById('rua').value = 'Rua Exemplo';
+            document.getElementById('bairro').value = 'Centro';
+        });
+        
+        // Validação do formulário
+        document.getElementById('form-cadastro').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const senha = document.getElementById('senha-cadastro').value;
+            const confirmarSenha = document.getElementById('confirmar-senha').value;
+            
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+            
+            if (senha.length < 8) {
+                alert('A senha deve ter no mínimo 8 caracteres!');
+                return;
+            }
+            
+            if (!document.getElementById('termos').checked) {
+                alert('Você deve aceitar os Termos de Uso para continuar!');
+                return;
+            }
+            
+            // Simulação de cadastro - em produção, seria uma chamada AJAX
+            alert('Cadastro realizado com sucesso! Redirecionando para o login...');
+            window.location.href = 'login.html';
+        });
+        
+        // Máscaras para os campos
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+        });
+    </script>
+</body>
+</html>
